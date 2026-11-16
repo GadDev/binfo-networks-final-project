@@ -277,7 +277,9 @@ The last trace is a constructed teaching example, not an observed result.
 
 No simulator, Docker configuration, packet encoder, graded implementation or report text has been generated. No performance measurements have been taken.
 
-**Check question for the next tutoring exchange:** The receiver has a complete file with a matching SHA-256, but its final verdict packet is lost. What should the sender do first, and what should it report if every retry also fails?
+**Design-check bank:** [DESIGN_CHECK_QUESTIONS.md](DESIGN_CHECK_QUESTIONS.md) contains 136 questions across 16 topics, a twelve-question starting set, and the requested worked example about a lost final verdict. It supports review throughout the project; the questions are tutoring prompts, not additional professor requirements.
+
+**Check question for the next tutoring exchange (Q-DATA-04):** Does a sender timeout prove that the DATA packet was lost? Name other explanations.
 
 ## References
 

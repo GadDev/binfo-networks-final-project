@@ -6,19 +6,21 @@
 
 ## In a nutshell: what do I actually need to do?
 
-**Build a file delivery service, deliberately give the network problems, and explain what happens.** Think of TCP as a courier that manages delivery and ordering; with UDP, you investigate postcards and then add your own delivery receipts.
+Imagine sending a photograph to another program. Your project asks: **did the whole photo arrive, how long did it take, and what happened when the network misbehaved?** The two programs can initially run on the same laptop.
 
-| Step | Your task | Evidence you will eventually produce | Assignment reference |
-| --- | --- | --- | --- |
-| 1. Establish the TCP baseline | Write a plain-socket client/server; send file metadata, stream bytes, handle partial reads, save under a new name, return OK/MISMATCH | Matching SHA-256; elapsed time, byte counts and throughput at both endpoints | R-TCP-01–07 [PDF p.2] |
-| 2. Build naive UDP | Define the packet format, START/DATA/END messages, and configurable chunk size and delay; measure with recovery disabled | Baseline transfer logs and frequency of matching file hashes | R-UDP-01–04; R-BASE-01 [PDF pp.3–4] |
-| 3. Explore size and pacing | Run the prescribed B1 chunk-size and B2 inter-packet-delay settings; investigate receive-buffer overflow | Throughput, packet counts, loss and the SO_RCVBUF setting | R-B1-01–03; R-B2-01–03 [PDF p.3] |
-| 4. Add reliable UDP | Choose and justify one ARQ scheme; detect corruption/duplicates, acknowledge data, retry on timeout and stop cleanly after bounded retries | B3 measurements at the five specified loss levels | R-B3-01–06 [PDF p.4] |
-| 5. Demonstrate reordering | Show an incorrect file assembled in arrival order, then correct sequence-aware reassembly | Both hash verdicts, arrival trace, reordered count and maximum distance | R-B4-01–04 [PDF p.4] |
-| 6. Run repeatable experiments | Use the three file classes, controlled impairments and at least five runs per configuration; preserve raw CSV and regenerate plots | Mean, standard deviation, error bars, hashes and documented environment | R-EXP-01–07; R-PLOT-01–04; R-CODE-04–05 [PDF pp.5–6, 8] |
-| 7. Explain your own work | Write the report yourself, prepare slides and be able to explain every line of code | Code repository/history, report PDF and presentation PDF | R-REP-01–11; R-PRES-01–02; R-CODE-01 [PDF pp.6–8, 10] |
+1. **Build TCP and UDP file transfers.** Write a sender (client) and a receiver (server), with a TCP version and a UDP version. TCP gives the receiver ordered bytes; your program still needs to say where the file starts and ends. UDP sends separate messages, like numbered postcards, which may be missing, repeated or shuffled. Your first goal is to understand and observe these differences. Sources: R-TCP-01–07; R-UDP-01–04.
 
-All requirement IDs resolve to [the assignment inventory](references/assignment-requirements.md). Recommendations below are engineering choices, not additional professor requirements.
+2. **Add reliability to UDP.** Teach your programs what to do when a postcard goes missing. The receiver sends a receipt (ACK); the sender waits for a limited time and sends the chunk again if necessary. Sequence numbers help identify chunks, ignore duplicates and reconstruct the right order. Choose and justify one ARQ recovery scheme, with bounded retries and clean failure. Sources: R-B3-01–06; R-B4-03. See the team-of-three exception below.
+
+3. **Run controlled comparisons.** Play the role of a network scientist: change one setting, keep the others steady, repeat the run and record what actually happens. Explore the required chunk sizes, sending delays, packet loss and reordering. Compare speed, missing data and recovery work; include failed runs in the evidence. Sources: R-B1-01–03; R-B2-01–03; R-B3-05; R-B4-01–04; R-EXP-01–07.
+
+4. **Verify file integrity.** Check that the received photo contains the same bytes as the original. Equal file sizes are not enough: two pages swapped in a book leave its size unchanged. Compute and compare SHA-256 fingerprints; also compute MD5/SHA-1 for the required discussion and cross-check with an OS hashing tool. CRC32 checks individual packet payloads; SHA-256 checks the reconstructed file. Sources: R-HASH-01–06.
+
+5. **Write your own report.** Explain what you built, why you chose that design, how you tested it, what your real measurements showed, and what their limitations are. Use your graphs as evidence. You write the arguments and conclusions; tutoring can help you understand the material and review your drafts. The report is an 8–12-page PDF, excluding appendices, with 11-point text. Sources: R-REP-01–11; academic integrity [PDF p.10].
+
+6. **Present your findings.** Explain the problem, your design, your most useful results and what you learned. Be ready to answer “why?” about the code and the measurements. Prepare PDF slides for a 12-minute talk and 3-minute Q&A; every team member speaks where applicable. A live demo is encouraged, not explicitly mandatory. Sources: R-PRES-01–04.
+
+All requirement IDs resolve to [the assignment inventory](references/assignment-requirements.md). Tool suggestions and design proposals below are engineering choices, not additional professor requirements.
 
 ### The experiment settings to keep in view
 
@@ -85,6 +87,15 @@ Read [the Stage 4 design proposal](docs/ARCHITECTURE.md) next. It compares a min
 
 **Design checkpoint:** lifecycle and recovery cases are documented for review. Architecture, ARQ scheme, experiment matrix and time budget still need a decision before implementation.
 
+### What if the final confirmation is lost?
+
+The receiver may have the correct file while the sender still has no proof. Under our proposed reliable lifecycle, the sender waits until its final-verdict timeout, then **retries END**, within its retry budget. The receiver keeps the completed session's result briefly and replies again; it does not restart the file. If every reply is lost, the sender records **UNCONFIRMED** and exits unsuccessfully, while the receiver may still record a verified MATCH.
+
+That is a proposed design response supporting R-B3-04 and the integrity requirements; the PDF does not prescribe this exact finalization protocol.
+
+Use the [design-check question bank](docs/DESIGN_CHECK_QUESTIONS.md) to practise these cases. It covers the full current project scope; work through one question at a time rather than treating the whole bank as extra work to finish before coding.
+
+
 ## Learning and planning documents
 
 | Document | Purpose |
@@ -98,6 +109,7 @@ Read [the Stage 4 design proposal](docs/ARCHITECTURE.md) next. It compares a min
 | [Technical research](docs/TECHSTACK.md) | Proposed tools and unresolved choices |
 | [Roadmap](docs/ROADMAP.md) | Reading order, milestones and schedule |
 | [Progress](PROGRESS.md) | Confirmed repository state and next checkpoint |
+| [Design-check questions](docs/DESIGN_CHECK_QUESTIONS.md) | Scenario bank for design review, debugging and examiner practice |
 
 Start with Kurose & Ross Chapter 1 §§1.1–1.5, then Chapter 2's socket programming section, then Chapter 3 on transport and reliable data transfer. The accompanying course contains explanations, not executable deliverables.
 

@@ -10,6 +10,8 @@
 - Added a README assignment summary, prescribed experiment settings, deliverables and tool choices.
 - Drafted the Stage 4 architecture comparison and packet lifecycle: START/DATA/ACK/END loss, duplicate handling, bounded retries, cached final verdict and an unconfirmed sender outcome.
 - Added proposed session isolation, counter definitions and paper desk-check scenarios.
+- Reworked the README overview into six plain-English parts with assignment references.
+- Added [136 design-check questions](docs/DESIGN_CHECK_QUESTIONS.md) across 16 topics, a twelve-question starting set and the requested lost-final-confirmation explanation.
 
 The original assignment PDF was not re-read during this update. The snapshot records the supplied requirements; no claim of fresh PDF verification is made.
 
@@ -48,6 +50,6 @@ Official dates: R-DEL-01 in [the assignment inventory](references/assignment-req
 
 ## Next session's goal
 
-Review [Stage 4](docs/ARCHITECTURE.md) and answer one scenario: the receiver has a matching file, but its final verdict is lost. Explain the sender's retry and eventual outcome.
+Use [the design-check bank](docs/DESIGN_CHECK_QUESTIONS.md), starting with Q-DATA-04: does a sender timeout prove DATA was lost? Explain possible alternatives. The final-confirmation scenario has been explained as a worked example; independent understanding has not yet been assessed.
 
 No application code, tests, containers, experiments, measurements, report PDF or slides have been produced.
