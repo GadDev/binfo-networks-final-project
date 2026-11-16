@@ -224,7 +224,7 @@ This file is the **detailed checklist** of everything to plan, learn, build, mea
 
 - [ ] **B4-04 [M] — Implement sequence-aware placement or buffering.** Source: PDF p.4. Depends on: B4-02,D-03. **Done when:** Data is reassembled by sequence rather than reception order, including last short chunk.
 
-- [ ] **B4-05 [M] — Verify corrected file matches original SHA-256.** Source: PDF p.4. Depends on: B4-04,H-03. **Done when:** Same reordering setup results in MATCH after correct reconstruction.
+- [ ] **B4-05 [M] — Verify corrected file matches original SHA-256.** Source: PDF p.4. Depends on: B4-04,H-02. **Done when:** Same reordering setup results in MATCH after correct reconstruction.
 
 - [ ] **B4-06 [M] — Measure number of reordered chunks and largest reordering distance.** Source: PDF p.4. Depends on: B4-02,D-06. **Done when:** Metric definitions and observed values are present in raw run records and report.
 
@@ -370,7 +370,7 @@ This file is the **detailed checklist** of everything to plan, learn, build, mea
 
 ---
 
-## 12. Bonus work — NOT on the critical path
+## 12. Bonus and optional work — NOT on the critical path
 
 **Indicative window:** Only after all mandatory criteria are secure.
 
@@ -384,7 +384,7 @@ This file is the **detailed checklist** of everything to plan, learn, build, mea
 
 - [ ] **X-05 [B] — Extra physical two-machine experiments.** Source: PDF pp.6,9. Depends on: E-02. **Done when:** Results supplement controlled emulation and describe additional hardware/path variability.
 
-- [ ] **X-06 [B] — Docker Compose pre-configured impairment environment.** Source: PDF p.8 (optional). Depends on: E-02. **Done when:** A documented container topology simplifies independent reproduction and demo.
+- [ ] **X-06 [R] — Docker Compose pre-configured impairment environment.** Source: PDF p.8 (optional). Depends on: E-02. **Done when:** A documented container topology simplifies independent reproduction and demo.
 
 ---
 
