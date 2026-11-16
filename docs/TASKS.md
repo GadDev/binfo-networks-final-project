@@ -154,7 +154,7 @@ This file is the **detailed checklist** of everything to plan, learn, build, mea
 
 - [ ] **B1-04 [M] — Study overhead with very small datagrams.** Source: PDF p.3. Depends on: B1-02. **Done when:** Report explains header overhead and system-call/packet-processing cost without unsupported performance claims.
 
-- [ ] **B1-05 [R] — Repeat each configuration at least five times and preserve failures.** Source: PDF p.6. Depends on: B1-02. **Done when:** Five+ raw observations per configuration and sample summary; no discarded failed runs.
+- [ ] **B1-05 [M] — Repeat each configuration at least five times and preserve failures.** Source: PDF p.6. Depends on: B1-02. **Done when:** Five+ raw observations per configuration and sample summary; no discarded failed runs.
 
 - [ ] **B1-06 [M] — Produce required TCP/UDP throughput-vs-size comparison.** Source: PDF p.6. Depends on: B1-02,T-07,B1-05. **Done when:** Common-axis chart shows defined TCP buffer vs UDP chunk-size comparison, units, caption and error bars.
 
