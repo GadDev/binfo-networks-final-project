@@ -69,7 +69,7 @@ No language version has been pinned and no requirements file created.
 
 **Reason for conditional status:** A 100 MB file in 64-byte chunks has 1,562,500 chunks (decimal MB), and even a hypothetical 20 ms RTT would make a one-at-a-time scheme take many hours. The assignment does not explicitly require every file size crossed with every chunk/delay/loss setting. Confirm the experiment matrix before fixing an ARQ choice.
 
-One ARQ scheme is mandatory; a second scheme is bonus only (PDF p.4). The separate B4 demonstration must include an intentionally incorrect arrival-order reconstruction, then correct placement.
+One ARQ scheme is normally mandatory; a second is bonus for solo/two-person work, but approved three-person teams must implement two (R-B3-07; R-DEL-02 [PDF pp.4, 10]). The separate B4 demonstration must include an intentionally incorrect arrival-order reconstruction, then correct placement.
 
 **Open decision:** Stop-and-Wait or Go-Back-N once the experiment workload has been clarified.
 
@@ -137,8 +137,10 @@ Slides must be PDF. Choice of slide-authoring tool is open; every student who is
 | ADR-004 | Stop-and-Wait ARQ | **Conditional** | Simplicity vs feasibility on small chunks/large files |
 | ADR-005 | Naive UDP separate from reliable-UDP/reordering demos | **Proposed** | Cleaner B1/B2/B4 evidence |
 | ADR-006 | Raw CSV + Python statistics + Matplotlib | **Proposed** | Reproducible analysis and error bars |
-| ADR-007 | Minimal modular architecture | **Open** | Compare variants during Stage 4 |
+| ADR-007 | Small shared core with thin TCP/UDP entry points | **Proposed** | Two variants and lifecycle desk checks in [Stage 4 design](ARCHITECTURE.md); student review pending |
 | ADR-008 | Report authoring workflow | **Open** | Student's personal comfort; professor permits Word |
+
+**Stage 4 update:** [ARCHITECTURE.md](ARCHITECTURE.md) documents a proposed packet lifecycle, a session-identifier extension, control/data acknowledgement meanings and bounded recovery. The extension changes header overhead and needs explicit acceptance; the minimum 11-byte assignment header remains the source requirement. No architecture or ARQ choice is approved by this update.
 
 **Decision gate:** No implementation until these decisions are reviewed, relevant ambiguities clarified, and the student explicitly authorizes the next phase.
 
@@ -151,4 +153,4 @@ Slides must be PDF. Choice of slide-authoring tool is open; every student who is
 - [RFC 768 — UDP](https://www.rfc-editor.org/rfc/rfc768), [RFC 9293 — TCP](https://www.rfc-editor.org/rfc/rfc9293).
 - [Kurose & Ross lecture slides](https://gaia.cs.umass.edu/kurose_ross/ppt.php).
 
-Related documents: [MISSION.md](MISSION.md), [CONSTITUTION.md](CONSTITUTION.md), [ROADMAP.md](ROADMAP.md).
+Related documents: [MISSION.md](MISSION.md), [CONSTITUTION.md](CONSTITUTION.md), [ROADMAP.md](ROADMAP.md), [ARCHITECTURE.md](ARCHITECTURE.md).
