@@ -56,6 +56,19 @@ This repository currently contains **learning and planning documentation only**.
 
 **Not included yet:** source code, dependency manifests, setup scripts, Docker configuration, experiments, measurements, report PDF, or slide deck.
 
+## Planning and research documents
+
+The following files contain **proposed plans**, not completed implementation or approved engineering decisions.
+
+| Document | What it covers |
+| --- | --- |
+| [Project constitution](docs/CONSTITUTION.md) | Academic integrity, no-code phase gate, correctness, reproducibility, and student ownership of the written report |
+| [Mission](docs/MISSION.md) | Assignment objectives, mandatory work, experimental research questions, and report requirements |
+| [Technical research](docs/TECHSTACK.md) | Python/Go alternatives, UDP reliability choices, macOS/Linux impairment environment, and provisional ADRs |
+| [Learning and delivery roadmap](docs/ROADMAP.md) | What to read first, active-learning method, future milestones, report-writing guidance and deadlines |
+
+**First reading:** Kurose & Ross **Chapter 1 §§1.1–1.5**, then the application-layer socket section in Chapter 2, then Chapter 3 on TCP/UDP and reliability.
+
 ## References
 
 - Assignment PDF: *Assignment: TCP vs UDP File Transfer*, especially pp. 1–10 (provided with the course, not stored here).
