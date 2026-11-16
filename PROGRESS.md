@@ -12,6 +12,31 @@ _Last updated: 2026-11-16 · Days to internal target (30 Nov): **14 calendar day
 - [x] Drafted research governance and planning documents: constitution, mission, technical alternatives and learning roadmap (documentation PR [#2](https://github.com/GadDev/binfo-networks-final-project/pull/2)). PR publication/merge status should be checked independently.
 - [x] Started guided Kurose & Ross Chapter 1 §1.1 lesson: “The Internet is a network of networks.”
 
+## Complete task checklist
+
+The full actionable, requirement-traceable plan is in **[docs/TASKS.md](docs/TASKS.md)**. It contains **136 tasks with stable IDs, priority labels, dependencies, PDF references and objective “done when” criteria**.
+
+| Workstream | Tasks done / total | Current status |
+| --- | ---: | --- |
+| Research, decisions and learning (R-01–R-12) | 4 / 12 | Chapter 1 reading and comprehension in progress |
+| Architecture and project foundation (D-01–D-08) | 0 / 8 | Research/design only; not authorized to implement |
+| TCP baseline (T-01–T-10) | 0 / 10 | Not started |
+| UDP protocol and naive baseline (U-01–U-10) | 0 / 10 | Not started |
+| B1 chunk-size experiments | 0 / 6 | Not started |
+| B2 delay experiments | 0 / 7 | Not started |
+| B3 UDP reliability | 0 / 13 | Not started |
+| B4 packet reordering | 0 / 8 | Not started |
+| Integrity, environment and reproducibility | 0 / 18 | Not started |
+| **Student-authored report** | 0 / 17 | Notes and structure planned; no report sections completed |
+| Presentation | 0 / 10 | Not started |
+| Final verification and submission | 0 / 11 | Not started |
+| Bonus/optional work | 0 / 6 | Excluded from critical path |
+| **Total** | **4 / 136** | **Research and guided learning only** |
+
+**Next actionable tasks:** **R-05** read and demonstrate Chapter 1 §§1.1–1.5; **R-10** confirm team and available hours; **R-11** send unresolved experiment questions to professor. **R-09** Stage 4 architecture research follows learning progress. No coding until **R-12** explicit implementation approval.
+
+**Important:** The 4 completed tasks represent research/documentation. They are **not four completed graded implementation tasks**, and no concept has yet been demonstrated as mastered.
+
 ## In progress
 
 - [ ] **Chapter 1 §1.1:** Explain the difference between a local network and the public Internet. The first check question was asked; **student answer is pending**.
@@ -60,6 +85,7 @@ At the end of **each interactive tutoring session**, review the student's actual
 - **Concepts to revisit:** misunderstandings with a brief reason.
 - **Days left / next session goal:** use the current Luxembourg date and one concrete mastery check.
 - **Session log:** concise date, covered material, evidence, next step.
+- **Task inventory:** update [docs/TASKS.md](docs/TASKS.md) checkboxes only when the task's own acceptance criterion is met; reference task IDs and evidence in this tracker.
 
 **Do not automatically mark a concept complete just because it was explained or read. Do not fabricate quiz results or experiment outputs.** GitHub updates can be made **during our active sessions** when repository access is available; this tracker is not an unattended background automation.
 
@@ -67,6 +93,7 @@ At the end of **each interactive tutoring session**, review the student's actual
 
 - [Project README](README.md)
 - [Course index](course/README.md)
-- [Learning roadmap](docs/ROADMAP.md) (in documentation PR #2 if not yet merged)
+- [Learning roadmap](docs/ROADMAP.md)
+- [Complete task inventory](docs/TASKS.md)
 - Assignment: *TCP vs UDP File Transfer*, 12 November 2026, especially pp. 2–10.
 - Kurose & Ross, *Computer Networking: A Top-Down Approach*, ninth edition, §§1.1–1.5, 2.1, 2.6, 3.3–3.5.
