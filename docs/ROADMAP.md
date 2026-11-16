@@ -10,6 +10,12 @@
 
 > **Schedule realism:** This is an aggressive plan. Daily available hours are not yet known. Technical experimentation plus the **student-authored 8–12-page report** can require substantial work. Before implementation, establish a real time budget and confirm the professor's expected experiment matrix. If the plan cannot fit, raise constraints rather than silently removing mandatory requirements.
 
+## Detailed work checklist
+
+See **[TASKS.md](TASKS.md)** for the complete assignment task inventory (stable IDs, mandatory/recommended/bonus labels, dependencies and concrete completion criteria). **[PROGRESS.md](../PROGRESS.md)** is the active record of what the student has actually completed and mastered.
+
+Keep both synchronized after tutoring/review sessions. Planning is not implementation authorization.
+
 ## 1. The two tracks
 
 **Track L — Learn deeply:** Read the textbook in a purposeful order, explain concepts, sketch diagrams, solve reasoning problems, and pass comprehension checks. Learning does not require writing application code.
@@ -20,19 +26,19 @@ A useful habit: write study notes in your own words now. Later, those notes help
 
 ## 2. Which chapter first?
 
-**FIRST: Kurose & Ross, Chapter 1 — Computer Networks and the Internet**, especially **``1.1–1.5**. Chapter 1 explains why networks have delays/loss and how layers work; without those foundations, reliability mechanisms in Chapter 3 are just names.
+**FIRST: Kurose & Ross, Chapter 1 — Computer Networks and the Internet**, especially **§§1.1–1.5**. Chapter 1 explains why networks have delays/loss and how layers work; without those foundations, reliability mechanisms in Chapter 3 are just names.
 
 ### Recommended assignment-focused reading order
 
 | Sequence | Textbook chapter / section | Essential knowledge | Active exercise (no code) | Suggested effort |
 | --- | --- | --- | --- | --- |
-| 1 | **Ch. 1 ``1.1–1.3** | Networks, endpoints, clients/servers, packets, routers, packet switching | Draw a request/response traveling through two endpoints and a router; label responsibilities | 1–1.5 h |
-| 2 | **Ch. 1 ``1.4–1.5** | Latency, loss, throughput; layered architecture, encapsulation | Explain queue loss vs corruption; draw application → transport → IP → link | 1–1.5 h |
+| 1 | **Ch. 1 §§1.1–1.3** | Networks, endpoints, clients/servers, packets, routers, packet switching | Draw a request/response traveling through two endpoints and a router; label responsibilities | 1–1.5 h |
+| 2 | **Ch. 1 §§1.4–1.5** | Latency, loss, throughput; layered architecture, encapsulation | Explain queue loss vs corruption; draw application → transport → IP → link | 1–1.5 h |
 | 3 | **Ch. 2 `2.1** | Application architectures, processes, addressing, transport service requirements | Explain IP vs port vs socket and why your file protocol needs metadata | 45–60 min |
 | 4 | **Ch. 2: "Socket Programming: Creating Network Applications"** | TCP streams, UDP datagrams, socket semantics, partial TCP reads | Trace how 1000 bytes sent once can be received in three reads | 1–1.5 h |
-| 5 | **Ch. 3 ``3.1–3.3** | Transport services, multiplexing, UDP, checksum | Explain datagram boundaries, header/payload and loss assumptions | 1–1.5 h |
+| 5 | **Ch. 3 §§3.1–3.3** | Transport services, multiplexing, UDP, checksum | Explain datagram boundaries, header/payload and loss assumptions | 1–1.5 h |
 | 6 | **Ch. 3 `3.4** | Reliable delivery, ACKs, timers, retransmissions, Stop-and-Wait, Go-Back-N, Selective Repeat | Draw a lost DATA packet, lost ACK, duplicate DATA, and reordered arrival | 2–3 h |
-| 7 | **Ch. 3 ``3.5–3.6** | TCP, RTT, timeout, flow control vs congestion control | Explain why an ACK is not congestion control and why windowing increases utilization | 1.5–2 h |
+| 7 | **Ch. 3 §§3.5–3.6** | TCP, RTT, timeout, flow control vs congestion control | Explain why an ACK is not congestion control and why windowing increases utilization | 1.5–2 h |
 | 8 | **Ch. 4 (IPv4/datagrams/fragmentation) + Ch. 6 (error detection/CRC)** | MTU, IPv4 fragmentation, checksums, packet corruption | Calculate 1500 − 20 − 8 − 11 = 1461 bytes of simplified file payload | 1–1.5 h |
 | 9 | **Assignment pp.5–7 + statistics refresher** | Hashing, goodput, repetitions, standard deviation and error bars | Work a five-run example and explain why one fast run proves little | 1–1.5 h |
 
@@ -47,7 +53,7 @@ References:
 
 ### Reading depth: now versus later
 
-- **For this assignment, read deeply:** Chapter 1 ``1.4–1.5, Chapter 2 socket programming, Chapter 3 ``3.3–3.5, relevant parts of Chapters 4/6 and statistical basics.
+- **For this assignment, read deeply:** Chapter 1 §§1.4–1.5, Chapter 2 socket programming, Chapter 3 §§3.3–3.5, relevant parts of Chapters 4/6 and statistical basics.
 - **For broader course knowledge after the assignment:** complete application-layer protocols, network routing/control plane, link layer, wireless/mobile, multimedia networking, and security. The course syllabus is broader than this specific assignment. Do not try to read the entire book before the near-term deadline.
 
 ## 3. Study methodology — learn, explain, apply, verify
@@ -109,10 +115,10 @@ These dates are **planning windows**, not promises. Current available study/deve
 | Date | Primary goal | Evidence and report-authorship activity |
 | --- | --- | --- |
 | **16 Nov** | Planning documents + start Ch.1 | Write personal glossary and 5 unanswered questions |
-| **17 Nov** | Ch.1 ``1.1–1.5 | Draw packet switching and layers; explain delay/loss |
+| **17 Nov** | Ch.1 §§1.1–1.5 | Draw packet switching and layers; explain delay/loss |
 | **18 Nov** | Ch.2 `2.1 and socket programming | Draw TCP/UDP client-server timelines; begin your own report research-question notes |
-| **19 Nov** | Ch.3 ``3.1–3.4 | Work ACK/timeout/reorder diagrams; discuss candidate ARQ |
-| **20 Nov** | Ch.3 ``3.5–3.6, targeted Ch.4/6; Stage 4 architecture | Check understanding, verify work hours and experiment matrix; make decisions or revise schedule |
+| **19 Nov** | Ch.3 §§3.1–3.4 | Work ACK/timeout/reorder diagrams; discuss candidate ARQ |
+| **20 Nov** | Ch.3 §§3.5–3.6, targeted Ch.4/6; Stage 4 architecture | Check understanding, verify work hours and experiment matrix; make decisions or revise schedule |
 | **21 Nov** | **Conditional:** TCP architecture and baseline | Start your own design/implementation notes; cite references |
 | **22 Nov** | **Conditional:** TCP correctness and integrity | Student drafts introduction/design outline in their own words |
 | **23 Nov** | **Conditional:** UDP packet format and naive baseline | Write packet-format explanation and diagrams in notes |
@@ -212,4 +218,4 @@ These should be resolved with the professor where necessary. Do not assume the a
 - [9th edition contents (publisher)](https://www.informit.com/store/computer-networking-a-top-down-approach-book-9780135429334).
 - [RFC 768 — UDP](https://www.rfc-editor.org/rfc/rfc768), [RFC 9293 — TCP](https://www.rfc-editor.org/rfc/rfc9293).
 
-Related: [CONSTITUTION.md](CONSTITUTION.md) · [MISSION.md](MISSION.md) · [TECHSTACK.md](TECHSTACK.md).
+Related: [CONSTITUTION.md](CONSTITUTION.md) · [MISSION.md](MISSION.md) · [TECHSTACK.md](TECHSTACK.md) · [TASKS.md](TASKS.md) · [PROGRESS.md](../PROGRESS.md).

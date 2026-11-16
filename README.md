@@ -109,9 +109,12 @@ Use the [design-check question bank](docs/DESIGN_CHECK_QUESTIONS.md) to practise
 | [Technical research](docs/TECHSTACK.md) | Proposed tools and unresolved choices |
 | [Roadmap](docs/ROADMAP.md) | Reading order, milestones and schedule |
 | [Progress](PROGRESS.md) | Confirmed repository state and next checkpoint |
+| [Complete task inventory](docs/TASKS.md) | Requirement-traceable checklist with priorities, dependencies and acceptance criteria |
 | [Design-check questions](docs/DESIGN_CHECK_QUESTIONS.md) | Scenario bank for design review, debugging and examiner practice |
 
 Start with Kurose & Ross Chapter 1 §§1.1–1.5, then Chapter 2's socket programming section, then Chapter 3 on transport and reliable data transfer. The accompanying course contains explanations, not executable deliverables.
+
+The planning and task documents describe proposed work, not completed implementation or approved engineering decisions. All implementation and experiment tasks are planned, not completed.
 
 ## Evidence and academic integrity
 
@@ -124,3 +127,5 @@ The [page-referenced requirements inventory](references/assignment-requirements.
 - Kurose & Ross, Computer Networking: A Top-Down Approach — [authors' resources](https://gaia.cs.umass.edu/kurose_ross/ppt.php), especially Chapter 3 §3.4.
 - [RFC 768 — UDP](https://www.rfc-editor.org/rfc/rfc768).
 - [RFC 9293 — TCP](https://www.rfc-editor.org/rfc/rfc9293).
+- Assignment PDF: *Assignment: TCP vs UDP File Transfer*, especially pp. 1–10 (provided with the course, not stored here).
+- AI assistance and online references must be cited; future implementation must be understood and defended by the student(s), and experimental measurements must come from their own runs.
