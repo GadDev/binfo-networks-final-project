@@ -69,6 +69,14 @@ The following files contain **proposed plans**, not completed implementation or 
 
 **First reading:** Kurose & Ross **Chapter 1 §§1.1–1.5**, then the application-layer socket section in Chapter 2, then Chapter 3 on TCP/UDP and reliability.
 
+## Track the work
+
+- [PROGRESS.md](PROGRESS.md) — current learning status, demonstrated mastery, blockers and next tutoring session.
+- [docs/TASKS.md](docs/TASKS.md) — **complete 136-task assignment checklist**, with PDF references, dependencies, priorities and “done when” criteria.
+- [docs/ROADMAP.md](docs/ROADMAP.md) — study order, delivery milestones and deadline plan.
+
+All implementation and experiment tasks are **planned, not completed**.
+
 ## References
 
 - Assignment PDF: *Assignment: TCP vs UDP File Transfer*, especially pp. 1–10 (provided with the course, not stored here).
