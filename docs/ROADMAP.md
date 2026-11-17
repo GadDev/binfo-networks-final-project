@@ -3,6 +3,8 @@
 **Date prepared:** 16 November 2026 · **Current phase:** Research & Discovery  
 **This document is a plan, not permission to implement.** Nothing below marked as future work has been started by this document.
 
+**Stage 4 documentation update:** [Architecture and packet lifecycle](ARCHITECTURE.md) has been drafted for review, including control-message loss and final-verdict recovery. This is research progress only; student mastery, final design decisions and available implementation hours remain unconfirmed.
+
 **Student profile:** Experienced programmer, beginner in networking; macOS; strongest language Python; Docker/Linux VM accessible; team unknown.  
 **Target:** Internal finish by **30 November 2026** · Official code/report/slides submission **2 December 2026 at 23:59 Luxembourg time** · Presentation **3 December 2026**.
 
@@ -93,7 +95,7 @@ These are **supporting explanations**, not a substitute for the textbook or assi
 | L1 | Study fundamentals | Assignment + Ch.1/2 | Explain layers, addressing, sockets, TCP/UDP boundaries | Critical | Next learning task |
 | L2 | Study reliability and experiments | L1 | Draw ARQ/loss/reorder timelines; explain goodput/SD/CRC/SHA | Critical | Planned |
 | R1 | Resolve architectural and experiment questions | L1–L2; professor if needed | Explicit approved decisions and realistic timing budget | Critical | Pending approval |
-| A1 | Compare minimum vs modular architecture | R1 | Conceptual diagrams, directory trees, trade-off comparison (Stage 4) | Critical | Planned research |
+| A1 | Compare minimum vs modular architecture | Draft research can proceed; R1 decisions needed before implementation | [Architecture proposal](ARCHITECTURE.md), responsibility tables, packet lifecycle, failure cases and review checkpoint (Stage 4) | Critical | Documented for review; no decision approved |
 | I1 | TCP baseline | Explicit implementation gate; A1 | All required TCP behaviors, hash MATCH and negative tests | Critical | Not authorized |
 | I2 | Naive UDP and protocol | I1 design context, A1 | Packet format/START/END, baseline hash verdict and CLI | Critical | Not authorized |
 | I3 | B1 and B2 | I2 | All required chunk/delay configurations, loss/throughput and buffer observations | Critical | Not authorized |
@@ -204,7 +206,7 @@ These should be resolved with the professor where necessary. Do not assume the a
 
 ## 9. Stage checkpoints
 
-- **Current:** Study Chapter 1; review these research documents; continue Stage 4 architecture research only when authorized.
+- **Current:** Review the drafted [Stage 4 architecture and lifecycle](ARCHITECTURE.md); continue Chapter 1 study. Final architecture, ARQ and experiment scope remain open.
 - **Before any coding:** Explicitly approve the architecture, Python choice, impairment setup, ARQ, experiment matrix and available hours.
 - **Before report finalization:** Verify every empirical claim against actual run records.
 - **Before submission:** Independent rubric/format/access check and presentation rehearsal.
